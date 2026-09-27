@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="stylesheet" href="style.css">
+    <title>Snake</title>
+</head>
+
+<body>
+    <h1>Snake</h1>
+    <div class="hud">
+        <div>Score: <span id="score">0</span></div>
+        <div>Best: <span id="best">0</span></div>
+        <button id="sound-btn" style="padding:4px 10px;font-size:0.85rem;">🔊 Music</button>
+    </div>
+
+    <div class="board-wrap">
+        <canvas id="board" width="400" height="400"></canvas>
+        <div class="overlay" id="overlay">
+            <strong id="overlay-title">Snake</strong>
+            <p id="overlay-msg">Use arrow keys, swipe, or the buttons below to play.</p>
+            <button id="start-btn">Start Game</button>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="dir dir-up" id="up">↑</button>
+        <button class="dir dir-left" id="left">←</button>
+        <button class="dir dir-down" id="down">↓</button>
+        <button class="dir dir-right" id="right">→</button>
+    </div>
+    <div class="hint">Arrow keys / WASD / swipe / buttons — Space to pause</div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
