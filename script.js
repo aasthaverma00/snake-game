@@ -163,18 +163,21 @@
         dir = nextDir;
         const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
 
-        if (
-            head.x < 0 || head.x >= GRID ||
-            head.y < 0 || head.y >= GRID ||
-            snake.some(s => s.x === head.x && s.y === head.y)
-        ) {
+        if (head.x < 0 || head.x >= GRID || head.y < 0 || head.y >= GRID) {
+            gameOver();
+            return;
+        }
+
+        const ateFood = head.x === food.x && head.y === food.y;
+        const bodyToCheck = ateFood ? snake : snake.slice(0, -1);
+        if (bodyToCheck.some(s => s.x === head.x && s.y === head.y)) {
             gameOver();
             return;
         }
 
         snake.unshift(head);
 
-        if (head.x === food.x && head.y === food.y) {
+        if (ateFood) {
             score++;
             scoreEl.textContent = String(score);
             if (score > best) {
