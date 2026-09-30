@@ -59,7 +59,7 @@
 
  .board-wrap {
      position: relative;
-     width: min(95vw, 65vh,);
+     width: min(95vw, 65vh);
      aspect-ratio: 1 / 1;
  }
 
